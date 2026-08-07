@@ -1,0 +1,68 @@
+/* ==========================================
+   نظام إدارة الاشتراكات - تحسينات Tailwind
+   ========================================== */
+
+body {
+  font-family: 'Tajawal', system-ui, sans-serif;
+}
+
+/* Active nav item */
+#sidebar nav ul li.active-nav {
+  background: #1f2937;
+  color: #fff;
+  border-right-color: #6366f1;
+}
+
+/* Table styles */
+.table-container table {
+  min-width: 600px;
+}
+
+/* Badge styles */
+.badge-active { background: #d1fae5; color: #065f46; }
+.badge-trial { background: #dbeafe; color: #1e40af; }
+.badge-expired { background: #fef3c7; color: #92400e; }
+.badge-cancelled { background: #fee2e2; color: #991b1b; }
+.badge-paused { background: #f3e8ff; color: #6b21a8; }
+.badge-suspended { background: #fce7f3; color: #9d174d; }
+
+/* Modal scroll */
+#modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Toast animation */
+.toast {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Page transitions */
+.page {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* RTL Overrides for Tailwind */
+.ltr { direction: ltr; text-align: left; }
+
+/* Print styles */
+@media print {
+  #sidebar, #modal-overlay, #loading-overlay, .btn { display: none !important; }
+  #main-content { margin-right: 0 !important; padding: 0 !important; }
+}
